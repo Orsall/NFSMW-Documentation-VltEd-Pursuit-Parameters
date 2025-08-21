@@ -8,6 +8,22 @@ find anything wrong in here.
 
 
 
+   ■ ────────────────────────────────────────────── ■
+   │               TABLE OF CONTENTS                │
+   │ ────────────────────────────────────────────── │
+   │ 1) Heat Level Parameters                       │
+   │ 2) Support Options                             │
+   │ 3) Cop Formations                              │
+   │ 4) Cop Spawn System                            │
+   │ 5) Collision Reactions                         │
+   │ 6) AI Vehicle Fields                           │
+   │ 7) Damage Specs                                │
+   │ 8) PVehicle Fields                             │
+   ■ ────────────────────────────────────────────── ■
+
+
+
+
 ───────────────────────────────────── ■ │ HEAT LEVEL PARAMETERS │ ■ ─────────────────────────────────────
 
  ⬘ Since there are many parameters here, i won't include those with self explanatory names such as "NumCopsToTriggerBackup" 
@@ -35,8 +51,8 @@ filling. The time to be busted is still 5 seconds and you'll only evade when out
 these parameters will only confuse players. Bust distance and time are hardcoded into the game. I strongly suggest leaving
 these parameters with their default values.
 
- • BY THE WAY: The distance from which you can be busted is 15 meters (thanks to rng_guy). The evade distance is related to
-   the LoS parameters.
+ • BY THE WAY: The distance from which you can be busted is 15 meters (thanks to rng_guy).
+               The evade distance is related to the LoS parameters.
 
 
     ● 0x1e2a1051 ("REP POINTS PER MINUTE")
@@ -324,13 +340,16 @@ This doesn't seem to affect anything.
     
     ❗❗❗ HEADS-UP: Without mods, the total amount of cops (spawned THIS way) that can exist is 8.
     ❗❗❗ HEADS-UP: Roadblocks seem to be wildly inconsistent when spawning the stationary units. There doesn't seem to be a 
-fixed rule that determines which of the available cop types in that heat level will spawn.   
+fixed rule that determines which of the available cop types in that heat level will spawn and with what chances.   
 
 
     ● COP TYPE
 Straightforward; the cop type that will spawn according to that set's defined values. Sadly, without mods, you can only have 3 
 cop types in a heat level, and the heli takes up one slot as well. It seems like the game can spawn any vehicle in "pvehicle" 
 and make it behave as a cop; simply write that vehicle's "CollectionName" in the Cop Type field.
+
+ • BY THE WAY: If you want a mod that allows you to use as many cop types as you want in a Heat Level, i strongly suggest
+               using rng_guy (oldmanjenkins)'s NFSMW Bartender mod.
 
 
     ● COUNT
@@ -363,7 +382,7 @@ means that they will use the default collisionreactions values for roadblocks. I
 number in Goal with the following one: 2656416483
 
 
-   ● HOW IT WORKS
+    ● HOW IT WORKS
 When you collide with something, the game calculates where you hit it (front, rear, front side or rear side) and applies those 
 values to the vehicle to calculate the physics. The "COP PIT" node is used for cops that are performing a PIT manuever.
  
@@ -533,7 +552,7 @@ Determines what sound the vehicles will make.
  ⬘ BEHAVIOR SOUNDS
     - SoundCop:     - Sirens
     - SoundRacer:   - Engine sounds from the "engineaudio" field. It looks like cops can't reproduce engine sounds even if
-                      you add them.
+                      you add them, unless there's some parameter that i missed.
     - SoundHeli:    - Helicopter rotor sounds.
     - SoundTraffic: - Sounds from traffic cars, including engine and honk sounds.
 
