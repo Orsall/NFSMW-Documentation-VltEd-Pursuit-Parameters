@@ -52,7 +52,7 @@ these parameters will only confuse players. Bust distance and time are hardcoded
 these parameters with their default values.
 
  • BY THE WAY: The distance from which you can be busted is 15 meters (thanks to rng_guy).
-               The evade distance is related to the LoS parameters.
+               The evade distance is related only to the LoS parameters.
 
 
     ● 0x1e2a1051 ("REP POINTS PER MINUTE")
